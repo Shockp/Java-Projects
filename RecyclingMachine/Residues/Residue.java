@@ -1,5 +1,7 @@
 package RecyclingMachine.Residues;
 
+import java.util.Random;
+
 /**
  * Abstract class representing a residue.
  */
@@ -8,15 +10,18 @@ public abstract class Residue {
     private double price;
     private double weight;
 
+	// Static Random instance for consistent random weight generation
+	private static final Random RANDOM = new Random();
+
     /**
-     * Constructor to initialize price and weight for a residue.
+     * Constructor to initialize price for a residue.
+	 * The weight is randomly assigned between 0 and 1.
      * 
      * @param price the price of the residue
-     * @param weight the weight of the residue
      */
-    public Residue(double price, double weight) {
+    public Residue(double price) {
         setPrice(price);
-        setWeight(weight);
+        setWeight();
     }
 
     /**
@@ -47,16 +52,10 @@ public abstract class Residue {
     }
 
     /**
-     * Sets the weight of the residue.
-     * Ensures that the weight is not negative.
-	 * This method is protected and can be used by subclasses to set the weight.
-     * 
-     * @param weight the weight of the residue
-     * @throws IllegalArgumentException if the weight is negative
-     */
-    protected void setWeight(double weight) { 
-        if (weight < 0) throw new IllegalArgumentException("Weight cannot be negative");
-        this.weight = weight;
+	 * Sets the weight of the residue to a random value between 0 and 1.
+	 */
+    private void setWeight() { 
+        this.weight = RANDOM.nextDouble();
     }
 
     /**
@@ -73,6 +72,6 @@ public abstract class Residue {
      */
     @Override
     public String toString() {
-        return "Residue Type: " + getResidueType() + ", Price: " + price + ", Weight: " + weight;
+        return getResidueType();
     }
 }

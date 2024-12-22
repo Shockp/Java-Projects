@@ -9,13 +9,12 @@ public class Glass extends Residue {
 	private static int num = 0;
 
 	/**
-	 * Constructor to initialize price and weight for a glass residue.
+	 * Constructor to initialize price for a glass residue.
 	 * 
 	 * @param price the price of the glass residue
-	 * @param weight the weight of the glass residue
 	 */
-	public Glass(double price, double weight) {
-		super(price, weight);
+	public Glass(double price) {
+		super(price);
 		num++; // Increment the static num counter when a new instance is created
 	}
 
@@ -24,7 +23,7 @@ public class Glass extends Residue {
 	 * 
 	 * @return the number of Glass instances
 	 */
-	public int getNum() { return num; }
+	public static int getNum() { return num; }
 
 	/**
 	 * Abstract method implementation to get the type of residue, specifically "Glass".
@@ -34,15 +33,5 @@ public class Glass extends Residue {
 	@Override
 	public String getResidueType() {
 		return "Glass";
-	}
-
-	/**
-	 * Returns a string representation of the Glass residue, including type, price, and weight.
-	 * 
-	 * @return a string representing the Glass residue
-	 */
-	@Override
-	public String toString() {
-		return "Residue Type: " + getResidueType() + ", Price: " + getPrice() + ", Weight: " + getWeight();
 	}
 }

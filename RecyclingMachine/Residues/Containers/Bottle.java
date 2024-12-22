@@ -13,8 +13,8 @@ public abstract class Bottle extends Container {
 	 * @param price the price of the bottle
 	 * @param weight the weight of the bottle
 	 */
-	public Bottle(double price, double weight) {
-		super(price, weight);
+	public Bottle(double price) {
+		super(price);
 	}
 
 	/**
