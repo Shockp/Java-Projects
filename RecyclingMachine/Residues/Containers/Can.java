@@ -14,18 +14,18 @@ public class Can extends Container {
 	// Attributes
 	private static int num = 0;
 	private String tag;
+	private static final double PRICE = 0.10; // Fixed price for Can residue
 
 	// Static Random instance for consistent random date generation
 	private static final Random RANDOM = new Random();
 
 	/**
-	 * Constructor to initialize the price of the Can.
+	 * Constructor to initialize the Can.
 	 * Generates a random tag for the Can and increments the instance counter.
-	 * 
-	 * @param price the price of the Can
+	 * The price is fixed to 0.10 for all Can instances
 	 */
-	public Can(double price) {
-		super(price);
+	public Can() {
+		super(PRICE);
 		setTag();
 		num++;
 	}
@@ -43,6 +43,13 @@ public class Can extends Container {
 	 * @return the tag of the can
 	 */
 	public String getTag() { return tag; }
+
+	/**
+	 * Returns the price of the Can.
+	 * 
+	 * @return the price of the Can
+	 */
+	public double getPrice() { return PRICE; }
 
 	/**
 	 * Sets the tag of the Can using a random expiration date.

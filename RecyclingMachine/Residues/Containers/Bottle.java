@@ -8,10 +8,9 @@ import RecyclingMachine.Residues.Container;
  */
 public abstract class Bottle extends Container {
 	/**
-	 * Constructor to initialize a bottle with a price and weight.
+	 * Constructor to initialize a bottle with a price.
 	 * 
 	 * @param price the price of the bottle
-	 * @param weight the weight of the bottle
 	 */
 	public Bottle(double price) {
 		super(price);
