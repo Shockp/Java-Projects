@@ -72,6 +72,11 @@ public class Can extends Container {
 		return date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	}
 
+	/**
+	 * returns the type of residue, specifically "Can".
+	 * 
+	 * @return the type of residue as a string
+	 */
 	@Override
 	public String getResidueType() {
 		return "Can";
