@@ -88,4 +88,13 @@ public class Can extends Container {
 	public String getResidueType() {
 		return "Can";
 	}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Can can = (Can) o;
+        return can.getTag() == this.getTag();
+    }
 }
