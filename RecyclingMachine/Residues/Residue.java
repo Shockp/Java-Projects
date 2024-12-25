@@ -46,7 +46,7 @@ public abstract class Residue {
 	 * @param price the price of the residue
 	 * @throws IllegalArgumentException if the price is negative
 	 */
-    protected void setPrice(double price) {
+    public void setPrice(double price) {
         if (price < 0) throw new IllegalArgumentException("Price cannot be negative");
         this.price = price;
     }
