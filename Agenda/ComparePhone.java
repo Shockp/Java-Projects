@@ -2,13 +2,29 @@ package Agenda;
 
 import java.util.Comparator;
 
-public class ComparePhone implements Comparator {
+/**
+ * Comparator implementation for comparing Contact objects based on their phone numbers.
+ */
+public class ComparePhone implements Comparator<Contact> {
+
+    /**
+     * Compares two Contact objects based on their phone numbers.
+     *
+     * @param c1 the first Contact to compare
+     * @param c2 the second Contact to compare
+     * @return a negative integer, zero, or a positive integer as the first Contact's phone
+     *         number is less than, equal to, or greater than the second Contact's phone number
+     * @throws ClassCastException if the arguments' types prevent them from being compared
+     */
     @Override
-    public int compare(Object o1, Object o2) throws ClassCastException {
-        Contact c1 = (Contact) o1;
-        Contact c2 = (Contact) o2;
-        if (c1.getPhone() > c2.getPhone()) return 1;
-        if (c1.getPhone() < c2.getPhone()) return -1;
-        return 0;
+    public int compare(Contact c1, Contact c2) throws ClassCastException {
+        if (c1 == null || c2 == null) {
+            throw new ClassCastException("Cannot compare null Contact objects.");
+        }
+
+        long phone1 = c1.getPhone();
+        long phone2 = c2.getPhone();
+
+        return Long.compare(phone1, phone2);
     }
 }
