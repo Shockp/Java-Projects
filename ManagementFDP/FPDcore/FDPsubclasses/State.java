@@ -1,4 +1,4 @@
-package ManagementFDP.FPDcore;
+package ManagementFDP.FPDcore.FDPsubclasses;
 
 public enum State {
     ENROLLED,
