@@ -80,7 +80,7 @@ public abstract class FDP implements Comparable<FDP>, Serializable {
 
     @Override
     public int compareTo(FDP fdp) {
-        return Float.compare(this.grade, fdp.grade);
+        return (int) Float.compare(this.grade, fdp.grade);
     }
 
     @Override
